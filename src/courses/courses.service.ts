@@ -5,7 +5,7 @@ import { response } from 'express';
 //REGRAS DE NEGÓCIO FICAM NO SERVICE
 
 @Injectable()
-export class CourseService {
+export class CoursesService {
     private courses: Course[] = [
         {
             id: 1,
@@ -27,6 +27,8 @@ export class CourseService {
                 HttpStatus.NOT_FOUND,
             );
         }
+
+        return course;
     }
 
     create(createCourseDto: any) {

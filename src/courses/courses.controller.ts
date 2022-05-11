@@ -1,10 +1,10 @@
-import { CourseService } from './courses.service';
+import { CoursesService } from './courses.service';
 import { Body, Controller, Get, Param, Post, Patch, Delete} from '@nestjs/common';
 
 @Controller('courses')
 export class CoursesController {
     //Injeção de dependencia
-    constructor(private readonly coursesService: CourseService){}
+    constructor(private readonly coursesService: CoursesService){}
 
     @Get()
     findAll() {
