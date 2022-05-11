@@ -1,6 +1,8 @@
 import { Course } from './entities/course.entity';
 import { Injectable } from '@nestjs/common';
 
+//REGRAS DE NEGÓCIO FICAM NO SERVICE
+
 @Injectable()
 export class CourseService {
     private courses: Course[] = [
