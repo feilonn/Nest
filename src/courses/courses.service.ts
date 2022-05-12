@@ -1,6 +1,5 @@
 import { Course } from './entities/course.entity';
 import { HttpException, Injectable, HttpStatus } from '@nestjs/common';
-import { response } from 'express';
 
 //REGRAS DE NEGÓCIO FICAM NO SERVICE
 
@@ -33,6 +32,7 @@ export class CoursesService {
 
     create(createCourseDto: any) {
         this.courses.push(createCourseDto);
+        return createCourseDto;
     }
 
     update(id: string, updateCourseDto: any) {
