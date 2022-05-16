@@ -28,9 +28,9 @@ export class CoursesService {
         });
     }
 
-    findOne(id: number) {
+    async findOne(id: number) {
         //{where:{"id":id}}
-        const course = this.courseRepository.findOne(id, {
+        const course = await this.courseRepository.findOne(id, {
             relations: ['tags']
         });
         
