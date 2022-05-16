@@ -23,12 +23,17 @@ export class CoursesService {
 
     findAll() {
         //Método find() sem parametros tras todos os registros do BD.
-        return this.courseRepository.find();
+        return this.courseRepository.find({
+            relations: ['tags']
+        });
     }
 
     findOne(id: number) {
         //{where:{"id":id}}
-        const course = this.courseRepository.findOne(id);
+        const course = this.courseRepository.findOne(id, {
+            relations: ['tags']
+        });
+        
         if (!course) {
             throw new NotFoundException(`Course ID = ${id} not found`);
         }
